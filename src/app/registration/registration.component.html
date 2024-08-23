@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <form (ngSubmit)="onSubmit()" [formGroup]="registrationForm" class="w-50 mx-auto">
+    <div class="mb-3">
+      <label for="image" class="form-label">Profile Image:</label>
+      <input type="file" id="image" class="form-control" (change)="onImageUpload($event)" />
+    </div>
+    
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" id="name" formControlName="name" class="form-control" />
+    </div>
+    
+    <div class="mb-3">
+      <label for="age" class="form-label">Age:</label>
+      <input type="number" id="age" formControlName="age" class="form-control" />
+    </div>
+    
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" id="email" formControlName="email" class="form-control" />
+    </div>
+    
+    <div class="mb-3">
+      <label for="password" class="form-label">Password:</label>
+      <input type="password" id="password" formControlName="password" class="form-control" />
+    </div>
+    
+    <div class="mb-3">
+      <label for="confirmPassword" class="form-label">Confirm Password:</label>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control" />
+    </div>
+    
+    <button type="submit" class="btn btn-primary w-100" [disabled]="!registrationForm.valid">Sign Up</button>
+  </form>
+</div>
